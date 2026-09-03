@@ -1,0 +1,12 @@
+2026-09-03 20:56:46 | INFO     | jarvis | Logging configured (level=INFO, dir=data\logs)
+2026-09-03 20:56:46 | INFO     | buddy.main | Starting Buddy in voice mode
+2026-09-03 20:56:47 | INFO     | comtypes.client._code_cache | Imported existing <module 'comtypes.gen' from 'C:\\Users\\Subham Pathak\\Desktop\\AI\\PROJECTS\\Buddy\\buddenv\\lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2026-09-03 20:56:47 | INFO     | comtypes.client._code_cache | Using writeable comtypes cache directory: 'C:\Users\Subham Pathak\Desktop\AI\PROJECTS\Buddy\buddenv\lib\site-packages\comtypes\gen'
+2026-09-03 20:56:51 | INFO     | httpx | HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-tiny.en/revision/main "HTTP/1.1 200 OK"
+2026-09-03 20:56:56 | INFO     | buddy.audio.wake_word | Microphone calibrated: ambient RMS=12.6, trigger threshold=25.1
+2026-09-03 20:56:56 | INFO     | buddy.audio.wake_word | Listening for wake word: 'hi buddy' (threshold=25.1)...
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+KERNELBASE.dll     00007FFEEAE5605D  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFEEBEECCB7  Unknown               Unknown  Unknown
+ntdll.dll          00007FFEED70CAEC  Unknown               Unknown  Unknown

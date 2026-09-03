@@ -33,7 +33,7 @@ class ConsoleTTS(TextToSpeech):
     """Fallback that just prints — always available, used by default/tests."""
 
     async def speak(self, text: str) -> None:
-        print(f"🔊 Jarvis: {text}")
+        print(f"🔊 Buddy: {text}")
 
 
 class Pyttsx3TTS(TextToSpeech):

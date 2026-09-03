@@ -2,8 +2,8 @@
 # This file holds NON-secret configuration. Secrets belong in `.env`.
 
 agent:
-  name: "Jarvis"
-  wake_word: "Hey Jarvis"
+  name: "Buddy"
+  wake_word: "Hi Buddy"
   max_history_messages: 20
   # Seconds to wait for a spoken command after the wake word is detected
   listen_timeout_seconds: 6

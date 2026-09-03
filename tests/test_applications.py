@@ -16,6 +16,8 @@ async def test_open_application_not_found_returns_failure():
 
 @pytest.mark.asyncio
 async def test_open_application_resolves_absolute_path(tmp_path):
+    from unittest.mock import patch
+
     fake_exe = tmp_path / "fake_chrome.exe"
     fake_exe.write_text("not a real binary")
 
@@ -25,10 +27,9 @@ async def test_open_application_resolves_absolute_path(tmp_path):
         )
     }
     tool = OpenApplicationTool(applications=apps)
-    result = await tool.execute({"application": "chrome"})
+    with patch("subprocess.Popen"):
+        result = await tool.execute({"application": "chrome"})
 
-    # On this (non-Windows) test platform, launching is simulated rather than
-    # actually spawning a process — but path resolution must still succeed.
     assert result.success is True
     assert result.data.get("executable") == str(fake_exe)
 

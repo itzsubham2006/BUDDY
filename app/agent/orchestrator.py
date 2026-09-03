@@ -69,7 +69,14 @@ class AgentOrchestrator:
                 system_prompt=build_system_prompt(self._agent_name, self._long_term.all()),
             )
         except LLMError as exc:
-            return self._fail(turn, f"I'm having trouble reaching my language model: {exc}")
+            logger.warning("LLM call failed (%s); checking local command fallback", exc)
+            from app.agent.local_matcher import LocalCommandMatcher
+            local_call = LocalCommandMatcher().match(user_text)
+            if local_call:
+                from app.llm.models import LLMResponse
+                response = LLMResponse(tool_calls=[local_call])
+            else:
+                return self._fail(turn, f"I'm having trouble reaching my language model: {exc}")
 
         plan = self._planner.plan_from_llm_response(response)
 

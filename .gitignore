@@ -15,6 +15,7 @@ env/
 .pytest_cache/
 .mypy_cache/
 buddenv/
+.env
 
 # App data
 data/logs/*.log*
