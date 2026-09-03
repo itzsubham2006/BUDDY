@@ -1,0 +1,34 @@
+# Secrets - NEVER commit
+buddenv
+
+# Local (non-example) config
+config/config.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+buddenv/
+
+# App data
+data/logs/*.log*
+data/memory/*.json
+
+# Build artifacts
+build/
+dist/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

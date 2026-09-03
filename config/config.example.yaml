@@ -1,0 +1,60 @@
+# Copy to config/config.yaml and adjust for your machine.
+# This file holds NON-secret configuration. Secrets belong in `.env`.
+
+agent:
+  name: "Jarvis"
+  wake_word: "Hey Jarvis"
+  max_history_messages: 20
+  # Seconds to wait for a spoken command after the wake word is detected
+  listen_timeout_seconds: 6
+
+# Known application launch targets. `executable` may be a full path, a bare
+# command that is resolvable on PATH, or omitted to rely on auto-detection.
+applications:
+  chrome:
+    display_name: "Google Chrome"
+    executable: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    fallback_executables:
+      - "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+  edge:
+    display_name: "Microsoft Edge"
+    executable: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+  firefox:
+    display_name: "Mozilla Firefox"
+    executable: "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+  vscode:
+    display_name: "Visual Studio Code"
+    executable: "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe"
+  explorer:
+    display_name: "File Explorer"
+    executable: "explorer.exe"
+  spotify:
+    display_name: "Spotify"
+    executable: "%APPDATA%\\Spotify\\Spotify.exe"
+  notepad:
+    display_name: "Notepad"
+    executable: "notepad.exe"
+  calculator:
+    display_name: "Calculator"
+    executable: "calc.exe"
+
+browser:
+  default_engine: "chromium"   # playwright engine: chromium, firefox, webkit
+  headless: false
+  default_search_engine: "google"
+
+permissions:
+  # Tools not listed here default to MEDIUM and require confirmation review.
+  overrides: {}
+  # If true, HIGH and CRITICAL tools always require spoken/typed confirmation
+  require_confirmation_high: true
+  require_confirmation_critical: true
+
+memory:
+  short_term_max_messages: 20
+  long_term_store_path: "./data/memory/long_term.json"
+
+logging:
+  log_dir: "./data/logs"
+  max_bytes: 1048576
+  backup_count: 5

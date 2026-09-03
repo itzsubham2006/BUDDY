@@ -1,0 +1,26 @@
+# Core
+python-dotenv==1.0.1
+PyYAML==6.0.2
+
+# LLM
+anthropic==0.39.0
+
+# Browser automation
+playwright==1.48.0
+
+# Speech (V1 defaults)
+pyttsx3==2.90
+faster-whisper==1.0.3
+numpy==1.26.4
+
+# Windows desktop integration (Phase 5-8)
+pystray==0.19.5
+Pillow==10.4.0
+plyer==2.1.0
+pycaw==20240210; sys_platform == "win32"
+comtypes==1.4.6; sys_platform == "win32"
+pywin32==308; sys_platform == "win32"
+
+# Testing
+pytest==8.3.3
+pytest-asyncio==0.24.0
